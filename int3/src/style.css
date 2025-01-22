@@ -231,3 +231,28 @@ body {
   display: flex;
   align-items: center;
 }
+
+.officina__polyglot{
+  margin-top: 3rem;
+}
+
+.polyglot__title{
+  font-family: "orpheuspro";
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+.polyglot__section{
+  padding: 1rem;
+  border: solid var(--main-color) 4px;
+  border-radius: 0.62rem;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.polyglot__img{
+  width: 12.25rem;
+  rotate: -90deg;
+}
