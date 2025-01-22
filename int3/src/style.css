@@ -27,7 +27,7 @@ body {
   line-height: 140%;
 }
 
-.title{
+.title {
   font-family: "orpheuspro";
   font-size: 4rem;
   line-height: 140%;
@@ -37,32 +37,40 @@ body {
   margin-bottom: 0rem;
 }
 
-.header{
+/* margins ------------------------------------------------------------------ */
+.header,
+.intro,
+.antwerp,
+.officina {
+  margin-bottom: var(--mobile-margin);
+}
+
+/* header section ------------------------------------------------------------------ */
+
+.header {
   display: grid;
   grid-template-columns: 1fr;
   align-content: center;
   justify-items: center;
 
   gap: 1rem;
-
-  margin-bottom: var(--mobile-margin);
 }
 
-.header__stamp{
+.header__stamp {
   height: 2.75rem;
 }
 
-.header__subtitle{
+.header__subtitle {
   color: var(--sub-color);
 }
 
-.header__img{
+.header__img {
   margin-top: -1rem;
   grid-row-start: 3;
   height: 18rem;
 }
 
-.header__btn{
+.header__btn {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.4rem;
@@ -75,26 +83,27 @@ body {
   font-weight: bold;
 }
 
-.intro{
-  margin-bottom: var(--mobile-margin);
-}
+/* intro section ------------------------------------------------------------------ */
 
-.intro__text{
+.intro__text {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.intro__img{
+.intro__img {
   width: 100%;
   display: flex;
 }
 
-.intro__star, .age__star{
+.intro__star,
+.age__star {
   height: 2rem;
 }
 
-.antwerp__title{
+/* antwerp section ------------------------------------------------------------------ */
+
+.antwerp__title {
   height: 7rem;
   font-family: "oprheuspro";
   font-size: 1.25rem;
@@ -131,63 +140,71 @@ body {
   margin: 0;
 }
 
-.scheldt-first, .scheldt-second, .scheldt-third{
+.scheldt-first,
+.scheldt-second,
+.scheldt-third {
   padding: .25rem;
   color: var(--bg-color);
   background-color: var(--main-color-bg);
   margin-bottom: 1rem;
 }
 
-.port-first, .port-second, .port-third{
+.port-first,
+.port-second,
+.port-third {
   padding: .25rem;
   color: var(--bg-color);
   background-color: var(--main-color-bg);
   margin-bottom: 1rem;
 }
 
-.bookwrap{
+.bookwrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.bookwrap__img{
+.bookwrap__img {
   height: 8.25rem;
 }
 
-.age{
+.age {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
 
+/* officina plantiniana section ------------------------------------------------------------------ */
+
+.officina {
   margin-bottom: var(--mobile-margin);
 }
 
-.officina__title{
+.officina__title {
   width: 7rem;
   font-family: "orpheuspro";
   font-size: 1.5rem;
   color: var(--main-color);
 }
 
-.officina__img{
+.officina__img {
   height: 32rem;
 }
 
-.officina__text{
+.officina__text {
   position: relative;
 
   display: grid;
   gap: 2rem;
 }
 
-.officina__right{
+.officina__right {
   margin-left: 20%;
 }
 
-.officina__sideInfo{
+.officina__sideInfo {
   position: absolute;
   top: 60%;
 
@@ -195,13 +212,13 @@ body {
   font-size: 0.87rem;
   color: var(--main-color);
   display: flex;
-  flex: row;
+  flex-direction: row;
   align-items: center;
   transform: rotate(-90deg);
   margin-left: -2.5rem;
 }
 
-.officina__sideInfo img{
+.officina__sideInfo img {
   height: 2.68rem;
 }
 
@@ -226,23 +243,23 @@ body {
   height: 1.5rem;
 }
 
-.scale{
-  height: 100;
+.scale {
+  height: 100%;
   display: flex;
   align-items: center;
 }
 
-.officina__polyglot{
+.officina__polyglot {
   margin-top: 3rem;
 }
 
-.polyglot__title{
+.polyglot__title {
   font-family: "orpheuspro";
   font-size: 1.5rem;
   color: var(--main-color);
 }
 
-.polyglot__section{
+.polyglot__section {
   padding: 1rem;
   border: solid var(--main-color) 4px;
   border-radius: 0.62rem;
@@ -252,7 +269,113 @@ body {
   justify-items: center;
 }
 
-.polyglot__img{
+.polyglot__img {
   width: 12.25rem;
-  rotate: -90deg;
+  transform: rotate(-90deg);
+}
+
+/* printer section ------------------------------------------------------------------ */
+
+.printing {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.printingpress__leftside,
+.printingpress__rightside {
+  font-family: "orpheuspro";
+  color: var(--main-color);
+  font-size: 2rem;
+
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.printingpress__leftside {
+  transform: rotate(-90deg);
+  left: -8rem;
+}
+
+.printingpress__rightside {
+  transform: rotate(90deg);
+  right: -8rem;
+}
+
+.printingpress__leftside img,
+.printingpress__rightside img {
+  height: 1.37rem;
+}
+
+.printer-container {
+  margin-left: 2rem;
+    margin-right: 2rem;
+
+  height: 75%;
+  border: solid var(--main-color) 4px;
+  border-radius: 8.1rem;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.printer {
+  position: absolute;
+}
+
+.printer img {
+  height: 12.8rem;
+}
+
+.drag{
+  margin-top: var(--mobile-margin);
+  margin-bottom: var(--mobile-margin);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.drag__sub{
+  color: var(--sub-color);
+  font-size: 0.87rem;
+  width: 16.25rem;
+}
+
+.drag__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.drag__img {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.drag__img img {
+  height: 6rem;
+}
+
+.drag__options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
 }
