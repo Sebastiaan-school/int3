@@ -1,93 +1,233 @@
 :root {
-  
+  --bg-color: #FFF6EC;
   --main-color: #B10B3A;
-  background-color: #242424;
+  --sub-color: #8D8984;
+  --main-color-bg: #b10b3a7b;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --mobile-margin: 5.3rem;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.orpheus-pro-regular {
+  font-family: "orpheuspro", serif;
+  font-weight: 400;
+  font-style: normal;
 }
-a:hover {
-  color: black;
+
+.lato-regular {
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: var(--main-color);
+  margin: 1.5rem;
+  background-color: var(--bg-color);
+  font-family: "Lato";
+  line-height: 140%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.title{
+  font-family: "orpheuspro";
+  font-size: 4rem;
+  line-height: 140%;
   text-align: center;
+  color: var(--main-color);
+
+  margin-bottom: 0rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.header{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  justify-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: var(--mobile-margin);
 }
 
-.card {
-  padding: 2em;
+.header__stamp{
+  height: 2.75rem;
 }
 
-.read-the-docs {
-  color: #888;
+.header__subtitle{
+  color: var(--sub-color);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.header__img{
+  margin-top: -1rem;
+  grid-row-start: 3;
+  height: 18rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.header__btn{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  background-color: var(--main-color);
+  border: 0;
+  font-size: 1rem;
+  color: var(--bg-color);
+  font-family: "orpheuspro";
+  font-weight: bold;
+}
+
+.intro{
+  margin-bottom: var(--mobile-margin);
+}
+
+.intro__text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro__img{
+  width: 100%;
+  display: flex;
+}
+
+.intro__star, .age__star{
+  height: 2rem;
+}
+
+.antwerp__title{
+  height: 7rem;
+  font-family: "oprheuspro";
+  font-size: 1.25rem;
+  color: var(--bg-color);
+  font-weight: 100;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./assets/img/antwerp.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.scheldt-pinned {
+  height: 100vh;
+
+  background: url(./assets/img/boat.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0;
+}
+
+.port-pinned {
+  height: 100vh;
+
+  background: url(./assets/img/printstamp.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  margin: 0;
+}
+
+.scheldt-first, .scheldt-second, .scheldt-third{
+  padding: .25rem;
+  color: var(--bg-color);
+  background-color: var(--main-color-bg);
+  margin-bottom: 1rem;
+}
+
+.port-first, .port-second, .port-third{
+  padding: .25rem;
+  color: var(--bg-color);
+  background-color: var(--main-color-bg);
+  margin-bottom: 1rem;
+}
+
+.bookwrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookwrap__img{
+  height: 8.25rem;
+}
+
+.age{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: var(--mobile-margin);
+}
+
+.officina__title{
+  width: 7rem;
+  font-family: "orpheuspro";
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+.officina__img{
+  height: 32rem;
+}
+
+.officina__text{
+  position: relative;
+
+  display: grid;
+  gap: 2rem;
+}
+
+.officina__right{
+  margin-left: 20%;
+}
+
+.officina__sideInfo{
+  position: absolute;
+  top: 60%;
+
+  font-family: "orpheuspro";
+  font-size: 0.87rem;
+  color: var(--main-color);
+  display: flex;
+  flex: row;
+  align-items: center;
+  transform: rotate(-90deg);
+  margin-left: -2.5rem;
+}
+
+.officina__sideInfo img{
+  height: 2.68rem;
+}
+
+.scale__sideInfo {
+  position: absolute;
+  top: 85%;
+  width: 100%;
+  left: 50%;
+
+  font-size: 0.62rem;
+  line-height: 100%;
+  color: var(--main-color);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  transform: rotate(90deg);
+}
+
+.scale__sideInfo img {
+  height: 1.5rem;
+}
+
+.scale{
+  height: 100;
+  display: flex;
+  align-items: center;
 }
