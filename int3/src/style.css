@@ -3,6 +3,8 @@
   --main-color: #B10B3A;
   --sub-color: #8D8984;
   --main-color-bg: #b10b3a7b;
+  --dark-bg-color: #141823;
+  --dark-title: #F8D3A6;
 
   --mobile-margin: 5.3rem;
 }
@@ -21,7 +23,6 @@
 
 
 body {
-  margin: 1.5rem;
   background-color: var(--bg-color);
   font-family: "Lato";
   line-height: 140%;
@@ -41,7 +42,11 @@ body {
 .header,
 .intro,
 .antwerp,
-.officina {
+.officina,
+.printingpress,
+.plantin, .moretus {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   margin-bottom: var(--mobile-margin);
 }
 
@@ -85,10 +90,36 @@ body {
 
 /* intro section ------------------------------------------------------------------ */
 
+.intro__title,
+.plantin__title {
+  font-family: "oprheuspro";
+  font-size: 2.5rem;
+  color: var(--main-color);
+
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 1.5rem;
+}
+
 .intro__text {
+  border: solid var(--main-color) 4px;
+  border-bottom-right-radius: 10rem;
+  padding: .25rem;
+}
+
+.intro__border {
+  border: solid var(--main-color) 2px;
+  border-bottom-right-radius: 10rem;
+
+  padding: .8rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
 .intro__img {
@@ -97,7 +128,8 @@ body {
 }
 
 .intro__star,
-.age__star {
+.age__star,
+.plantin__star, .moretus__star {
   height: 2rem;
 }
 
@@ -108,7 +140,6 @@ body {
   font-family: "oprheuspro";
   font-size: 1.25rem;
   color: var(--bg-color);
-  font-weight: 100;
   text-align: center;
 
   display: flex;
@@ -317,7 +348,7 @@ body {
 
 .printer-container {
   margin-left: 2rem;
-    margin-right: 2rem;
+  margin-right: 2rem;
 
   height: 75%;
   border: solid var(--main-color) 4px;
@@ -338,7 +369,7 @@ body {
   height: 12.8rem;
 }
 
-.drag{
+.drag {
   margin-top: var(--mobile-margin);
   margin-bottom: var(--mobile-margin);
 
@@ -349,7 +380,7 @@ body {
   gap: 0.5rem;
 }
 
-.drag__sub{
+.drag__sub {
   color: var(--sub-color);
   font-size: 0.87rem;
   width: 16.25rem;
@@ -379,3 +410,135 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* plantin section ------------------------------------------------------------------ */
+
+.plantin__img {
+  width: 100%;
+  margin: 0;
+}
+
+.plantin__text {
+  border: solid var(--main-color) 4px;
+  border-bottom-right-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  padding: .25rem;
+}
+
+.plantin__border {
+  border: solid var(--main-color) 2px;
+  border-bottom-right-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+
+  padding: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* plantin section ------------------------------------------------------------------ */
+
+.trouble {
+  background-color: var(--dark-bg-color);
+  color: var(--bg-color);
+
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  padding-bottom: var(--mobile-margin);
+}
+
+.trouble__title {
+  padding-top: 3rem;
+
+  font-family: "oprheuspro";
+  font-size: 1.25rem;
+  color: var(--main-color);
+
+  display: flex;
+  justify-content: center;
+}
+
+.trouble__heresy,
+.trouble__fleeing,
+.trouble__letter,
+.trouble__burn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
+  border: solid var(--main-color) 4px;
+  border-top-right-radius: 10rem;
+  border-top-left-radius: 10rem;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.trouble__fleeing,
+.trouble__letter {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.trouble__burn {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+}
+
+.heresy__small {
+  font-size: 0.62rem;
+}
+
+.heresy__img,
+.flee__img,
+.letter__img,
+.burn__img {
+  height: 10.93rem;
+}
+
+.trouble__sub {
+  font-family: "orpheuspro";
+  font-size: 1.5rem;
+  color: var(--dark-title);
+}
+
+.trouble__periods {
+  margin-top: 3rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.periods__title__container {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.periods__title__container img{
+  height: 1.75rem;
+}
+
+.periods__title {
+  font-family: "orpheuspro";
+  font-size: 1.5rem;
+}
+
