@@ -105,6 +105,7 @@ body {
 }
 
 .intro__text {
+  height: 100%;
   border: solid var(--main-color) 4px;
   border-bottom-right-radius: 10rem;
   padding: .25rem;
@@ -115,8 +116,8 @@ body {
   border-bottom-right-radius: 10rem;
 
   padding: .8rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin: .5rem;
+  /* padding-bottom: 2rem; */
 
   display: flex;
   flex-direction: column;
@@ -224,7 +225,8 @@ body {
 }
 
 .officina__img {
-  height: 32rem;
+  height: auto;
+  width: 100%;
 }
 
 .officina__text {
@@ -570,4 +572,52 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+/* responsive ------------------------------------------------------------------ */
+
+@media screen and (min-width: 64rem) {
+  .title {
+    font-size: 8.75rem;
+    text-align: center;
+    width: 43.56rem;
+  }
+
+  .intro {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 70%;
+    align-content: center;
+  }
+
+  .intro__title {
+    grid-column-start: 2;
+    align-self: flex-end;
+  }
+
+  .intro__img {
+    height: 48rem;
+    max-height: 58rem;
+    width: auto;
+
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: center;
+  }
+
+  .intro__text{
+    border: 0;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .intro__border{
+    min-height: 22rem;
+    
+    outline: 4px solid var(--main-color);
+    outline-offset: .5rem;
+  }
 }
