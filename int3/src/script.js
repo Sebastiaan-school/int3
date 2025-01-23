@@ -1,5 +1,63 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const tlScheldt = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.scheldt-pinned', 
+        start: 'top top',           
+        end: '+=100%',              
+        scrub: true,                
+        pin: true,                  
+        markers: true
+    }
+});
+
+// Add animations to the timeline
+tlScheldt.fromTo('.scheldt-first',
+    { y: "100%", opacity: 0 },
+    { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+)
+
+// Animation for second text (fade-in and reset)
+tlScheldt.fromTo('.scheldt-second',
+    { y: "100%", opacity: 0 },
+    { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+)
+
+// Animation for third text (fade-in and reset)
+tlScheldt.fromTo('.scheldt-third',
+    { y: "100%", opacity: 0 },
+    { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+)
+
+const tlPort = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.port-pinned',
+        start: 'top top',
+        end: '+=100%',
+        scrub: true,
+        pin: true,
+        markers: true,
+    }
+});
+
+// Add animations to the timeline
+tlPort.fromTo('.port-first',
+    { y: "100%", opacity: 0 },
+    { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+)
+
+// Animation for second text (fade-in and reset)
+tlPort.fromTo('.port-second',
+    { y: "100%", opacity: 0 },
+    { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+)
+
+// Animation for third text (fade-in and reset)
+tlPort.fromTo('.port-third',
+    { y: "100%", opacity: 0 },
+    { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+)
+
 // Create a timeline for aligning all .printer elements
 const timeline = gsap.timeline({
     scrollTrigger: {

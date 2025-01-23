@@ -41,11 +41,12 @@ body {
 /* margins ------------------------------------------------------------------ */
 .header,
 .intro,
-.antwerp,
 .officina,
 .printingpress,
 .plantin,
-.moretus {
+.moretus,
+.bookwrap,
+.age {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   margin-bottom: var(--mobile-margin);
@@ -139,10 +140,23 @@ body {
 
 /* antwerp section ------------------------------------------------------------------ */
 
+.antwerp {
+  background-color: var(--main-color);
+  padding-top: 2rem;
+  border-top-left-radius: 8rem;
+  border-top-right-radius: 8rem;
+  overflow: hidden;
+}
+
 .antwerp__title {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
   height: 7rem;
+
   font-family: "oprheuspro";
   font-size: 1.25rem;
+
   color: var(--bg-color);
   text-align: center;
 
@@ -152,52 +166,57 @@ body {
   background: url(./assets/img/antwerp.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  margin-bottom: 2rem;
 }
 
-.scheldt-pinned {
-  height: 100vh;
 
-  background: url(./assets/img/boat.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  margin: 0;
-}
 
+.scheldt-pinned,
 .port-pinned {
   height: 100vh;
+  max-width: 100%;
+  position: relative;
 
-  background: url(./assets/img/printstamp.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 
-  margin: 0;
+  overflow: hidden;
+
+  margin-bottom: 2rem;
+}
+
+.scheldt__img,
+.port__img {
+  max-width: 21.3rem;
+  position: absolute;
+
+  z-index: -1;
+
+  top: 10rem;
+}
+
+.scheldt__text,
+.port__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .scheldt-first,
 .scheldt-second,
-.scheldt-third {
-  padding: .25rem;
-  color: var(--bg-color);
-  background-color: var(--main-color-bg);
-  margin-bottom: 1rem;
-}
-
+.scheldt-third,
 .port-first,
 .port-second,
 .port-third {
-  padding: .25rem;
+  width: 21rem;
   color: var(--bg-color);
   background-color: var(--main-color-bg);
-  margin-bottom: 1rem;
 }
 
 .bookwrap {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 }
 
 .bookwrap__img {
@@ -209,6 +228,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+
+  border: solid var(--bg-color) 4px;
+  border-bottom-left-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+  padding: 2rem;
 }
 
 /* officina plantiniana section ------------------------------------------------------------------ */
@@ -607,17 +632,77 @@ body {
     justify-self: center;
   }
 
-  .intro__text{
+  .intro__text {
     border: 0;
     justify-content: center;
     align-content: center;
     align-items: center;
   }
 
-  .intro__border{
+  .intro__border {
     min-height: 22rem;
-    
+
     outline: 4px solid var(--main-color);
     outline-offset: .5rem;
+  }
+
+  .antwerp__title {
+    max-height: 26.62rem;
+
+    font-size: 3rem;
+    display: flex;
+    align-content: center;
+    justify-items: center;
+  }
+
+  .scheldt-pinned,
+  .port-pinned {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .scheldt__img {
+    grid-column-start: 2;
+  }
+
+  .scheldt__text {
+    grid-row-start: 1;
+  }
+
+  .scheldt__img,
+  .port__img {
+    position: relative;
+    top: auto;
+  }
+
+  .port__img {
+    grid-column-start: 1;
+  }
+
+  .bookwrap {
+    grid-template-columns: 50% 50%;
+    color: var(--bg-color);
+  }
+
+  .bookwrap__text {
+    grid-column-start: 1;
+    grid-row: 1;
+  }
+
+  .bookwrap__img {
+    grid-column-start: 2;
+    /* max-width: 13.62rem; */
+  }
+
+  .age {
+    flex-direction: row;
+  }
+
+  .age__text{
+    max-width: 44.56rem;
   }
 }
