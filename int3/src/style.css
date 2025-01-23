@@ -44,7 +44,8 @@ body {
 .antwerp,
 .officina,
 .printingpress,
-.plantin, .moretus {
+.plantin,
+.moretus {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   margin-bottom: var(--mobile-margin);
@@ -91,7 +92,8 @@ body {
 /* intro section ------------------------------------------------------------------ */
 
 .intro__title,
-.plantin__title {
+.plantin__title,
+.moretus__title {
   font-family: "oprheuspro";
   font-size: 2.5rem;
   color: var(--main-color);
@@ -129,7 +131,8 @@ body {
 
 .intro__star,
 .age__star,
-.plantin__star, .moretus__star {
+.plantin__star,
+.moretus__star {
   height: 2rem;
 }
 
@@ -440,7 +443,7 @@ body {
   gap: 1rem;
 }
 
-/* plantin section ------------------------------------------------------------------ */
+/* trouble section ------------------------------------------------------------------ */
 
 .trouble {
   background-color: var(--dark-bg-color);
@@ -448,7 +451,8 @@ body {
 
   border-top-left-radius: 10rem;
   border-top-right-radius: 10rem;
-  padding-bottom: var(--mobile-margin);
+  padding-bottom: 3rem;
+  margin-bottom: var(--mobile-margin);
 }
 
 .trouble__title {
@@ -533,7 +537,7 @@ body {
   gap: 1rem;
 }
 
-.periods__title__container img{
+.periods__title__container img {
   height: 1.75rem;
 }
 
@@ -542,3 +546,28 @@ body {
   font-size: 1.5rem;
 }
 
+/* moretus section ------------------------------------------------------------------ */
+
+.moretus__img {
+  width: 100%;
+}
+
+.moretus__text {
+  border: solid var(--main-color) 4px;
+  border-bottom-left-radius: 10rem;
+  padding: .25rem;
+}
+
+.moretus__border {
+  border: solid var(--main-color) 2px;
+  border-bottom-left-radius: 10rem;
+
+  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
