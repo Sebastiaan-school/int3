@@ -675,6 +675,20 @@ body {
 }
 
 @media screen and (min-width: 64rem) {
+
+  .header,
+  .intro,
+  .officina,
+  .printingpress,
+  .plantin,
+  .moretus,
+  .bookwrap,
+  .age {
+    margin-left: 6.37rem;
+    margin-right: 6.37rem;
+    margin-bottom: var(--mobile-margin);
+  }
+
   .title {
     font-size: 8.75rem;
     text-align: center;
@@ -682,6 +696,8 @@ body {
   }
 
   .intro {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -692,6 +708,7 @@ body {
   .intro__title {
     grid-column-start: 2;
     align-self: flex-end;
+    justify-items: center;
   }
 
   .intro__img {
@@ -706,6 +723,7 @@ body {
   }
 
   .intro__text {
+    max-width: 29rem;
     border: 0;
     justify-content: center;
     align-content: center;
@@ -778,11 +796,6 @@ body {
     max-width: 44.56rem;
   }
 
-  .officina {
-    margin-left: 6.37rem;
-    margin-right: 6.37rem;
-  }
-
   .officina__title {
     margin-bottom: 2rem;
     font-size: 3rem;
@@ -837,8 +850,8 @@ body {
   .plantin {
     height: 100%;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 30% 70%;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 20% 80%;
     align-content: center;
   }
 
@@ -848,20 +861,23 @@ body {
   }
 
   .plantin__img {
-    height: 48rem;
-    max-height: 58rem;
+    max-width: 100%;
+    max-height: auto;
     width: auto;
 
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: 3;
+    align-self: center;
     justify-self: center;
   }
 
   .plantin__text {
+    max-width: 29rem;
+    padding: 2rem;
     border: 0;
-    justify-content: center;
-    align-content: center;
+    justify-self: center;
+    align-self: center;
     align-items: center;
   }
 
