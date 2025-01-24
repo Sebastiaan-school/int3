@@ -879,7 +879,7 @@ body {
 
   .plantin__border {
     min-height: 22rem;
-
+    
     outline: 4px solid var(--main-color);
     outline-offset: .5rem;
   }
