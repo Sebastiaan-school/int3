@@ -4,7 +4,7 @@ const schedltAnimation = () => {
     const tlScheldt = gsap.timeline({
         scrollTrigger: {
             trigger: '.scheldt-pinned',
-            start: 'top top',
+            start: 'top-=100 top',
             end: '+=100%',
             scrub: true,
             pin: true,
@@ -35,7 +35,7 @@ const portAnimation = () => {
     const tlPort = gsap.timeline({
         scrollTrigger: {
             trigger: '.port-pinned',
-            start: 'top top',
+            start: 'top-=100 top',
             end: '+=100%',
             scrub: true,
             pin: true,
@@ -85,6 +85,45 @@ const printerAnimation = () => {
         .from(".fifth", { x: "5rem", y: "9rem", duration: 1 }, 0)
         .from(".sixth", { x: "3rem", y: "7rem", duration: 1 }, 0)
         .from(".seventh", { x: "-4rem", y: "2rem", duration: 1 }, 0);
+}
+
+const dragdropInteraction = () => {
+    // Add drag events to images
+    const images = document.querySelectorAll('.drag__img img');
+    images.forEach(img => {
+        img.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.id);
+        });
+    });
+
+    // Add drag and drop events to text options
+    const options = document.querySelectorAll('.drag__options p');
+    options.forEach(option => {
+        option.addEventListener('dragover', (e) => {
+            e.preventDefault(); // Necessary to allow a drop
+            option.classList.add('hovered');
+        });
+
+        option.addEventListener('dragleave', () => {
+            option.classList.remove('hovered');
+        });
+
+        option.addEventListener('drop', (e) => {
+            e.preventDefault();
+            option.classList.remove('hovered');
+
+            const draggedId = e.dataTransfer.getData('text/plain');
+            const draggedElement = document.getElementById(draggedId);
+
+            // Check if the dragged image matches the option
+            if (option.id === `s${draggedId.slice(1)}`) {
+                option.textContent = '✔ ' + option.textContent;
+                option.style.backgroundColor = '#d4f1d4';
+                draggedElement.style.opacity = '0.5';
+                draggedElement.draggable = false; // Disable further dragging
+            }
+        });
+    });
 }
 
 const troubleToggle = () => {
@@ -238,6 +277,7 @@ const init = () => {
     schedltAnimation();
     portAnimation();
     printerAnimation();
+    dragdropInteraction();
     troubleToggle();
     quizInteration();
 }

@@ -17,14 +17,15 @@
 </head>
 
 <body>
-  <h1 class="title">Printing for Plantin</h1>
-  <section class="header">
+  
+  <div class="header">
+    <h1 class="title">Printing for Plantin</h1>
     <img class="header__stamp" src="./src/assets/img/stamp.svg" alt="stamp of approval">
     <p class="header__subtitle">
-      Do you have what it takes to get <br>
+      Do you have what it takes to get
       the stamp of approval?
     </p>
-    <picture>
+    <picture class="header__img">
       <img class="header__img" sizes="(max-width: 1132px) 100vw, 1132px" srcset="
         ./src/assets/img/header_zlh713_c_scale,w_200.avif 200w,
         ./src/assets/img/header_zlh713_c_scale,w_450.avif 450w,
@@ -37,11 +38,11 @@
         src="./src/assets/img/header_zlh713_c_scale,w_1132.avif" alt="">
     </picture>
     <p class="header__cta">
-      Discover the life of an aspiring printer,
+      Discover the life of an aspiring printer, <br>
       trying to work for Plantin
     </p>
     <button class="header__btn">EXPLORE!</button>
-  </section>
+  </div>
   <section class="intro">
     <h2 class="intro__title">Jan Ortelius</h2>
     <img class="intro__img" src="./src/assets/img/intro.png" alt="portrait of a young man by Peter Paul Rubens">
@@ -71,7 +72,7 @@
     </article>
   </section>
   <section class="antwerp">
-    <h2 class="antwerp__title">THE BUSTLING CITY OF ANTWERP</h2>
+    <h2 class="antwerp__title"><span class="antwerp__title--text">THE BUSTLING CITY OF ANTWERP</span></h2>
     <div class="scheldt-pinned">
       <img class="scheldt__img" src="./src/assets/img/boat.png" alt="">
       <div class="scheldt__text">
@@ -286,14 +287,14 @@
       </p>
       <div class="drag__container">
         <div class="drag__img">
-          <img src="./src/assets/img/inkdabber.png" alt="ink dabber">
-          <img src="./src/assets/img/tympanfrisket.png" alt="tympan and frisket">
-          <img src="./src/assets/img/forme.png" alt="forme">
+          <img id="e1" src="./src/assets/img/inkdabber.png" alt="ink dabber" draggable="true">
+          <img id="e2" src="./src/assets/img/tympanfrisket.png" alt="tympan and frisket" draggable="true">
+          <img id="e3" src="./src/assets/img/forme.png" alt="forme" draggable="true">
         </div>
         <div class="drag__options">
-          <p>ink dabber</p>
-          <p>tympan and frisket</p>
-          <p>forme</p>
+          <p id="s1">ink dabber</p>
+          <p id="s2">tympan and frisket</p>
+          <p id="s3">forme</p>
         </div>
       </div>
     </article>
@@ -452,7 +453,7 @@
       </div>
     </article>
   </section>
-  <section>
+  <section class="quiz">
     <h2>Before you go</h2>
     <p>
       Actually, now that I think about it, maybe it’s time for you to head back to where you came from. I heard
