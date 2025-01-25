@@ -627,6 +627,61 @@ body {
   gap: 1rem;
 }
 
+/* quiz section ------------------------------------------------------------------ */
+
+.quiz__question {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.quiz__question.active {
+  display: block;
+}
+
+.typesetter__letter p {
+  display: inline-block;
+  padding: 0.5rem;
+  margin: 0.2rem;
+  border: 1px solid #000;
+  cursor: pointer;
+  user-select: none;
+}
+
+.typesetter__letter p.correct {
+  background-color: lightgreen;
+}
+
+.typesetter__letter p.incorrect {
+  background-color: lightcoral;
+}
+
+.quiz__wife div p {
+  cursor: pointer;
+}
+
+.quiz__wife div p.correct {
+  background-color: lightgreen;
+}
+
+.quiz__wife div p.incorrect {
+  background-color: lightcoral;
+}
+
+.typesetter__sequence p {
+  display: inline-block;
+  margin: 0.2rem;
+  padding: 0.5rem;
+  border: 1px solid #000;
+}
+
+.typesetter__sequence .correct {
+  background-color: lightgreen;
+}
+
+.typesetter__sequence .incorrect {
+  background-color: lightcoral;
+}
+
 /* responsive ------------------------------------------------------------------ */
 
 @media screen and (min-width: 48rem) {
