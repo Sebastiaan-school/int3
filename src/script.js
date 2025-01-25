@@ -2,11 +2,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const tlScheldt = gsap.timeline({
     scrollTrigger: {
-        trigger: '.scheldt-pinned', 
-        start: 'top top',           
-        end: '+=100%',              
-        scrub: true,                
-        pin: true,                  
+        trigger: '.scheldt-pinned',
+        start: 'top top',
+        end: '+=100%',
+        scrub: true,
+        pin: true,
         markers: true
     }
 });
@@ -80,3 +80,40 @@ timeline
     .from(".fifth", { x: "5rem", y: "9rem", duration: 1 }, 0)
     .from(".sixth", { x: "3rem", y: "7rem", duration: 1 }, 0)
     .from(".seventh", { x: "-4rem", y: "2rem", duration: 1 }, 0);
+
+// Select the article element
+const heresy = document.querySelector('.trouble__heresy');
+
+// Add an event listener to the article
+heresy.addEventListener('click', () => {
+    // Toggle the hidden class on the content div
+    const content = heresy.querySelector('.heresy__text');
+    content.classList.toggle('heresy__hidden');
+});
+
+const fleeing = document.querySelector('.trouble__fleeing');
+
+// Add an event listener to the article
+fleeing.addEventListener('click', () => {
+    // Toggle the hidden class on the content div
+    const content = fleeing.querySelector('.fleeing__text');
+    content.classList.toggle('fleeing__hidden');
+});
+
+const letter = document.querySelector('.trouble__letter');
+
+// Add an event listener to the article
+letter.addEventListener('click', () => {
+    // Toggle the hidden class on the content div
+    const content = letter.querySelector('.letter__text');
+    content.classList.toggle('letter__hidden');
+});
+
+const burn = document.querySelector('.trouble__burn');
+
+// Add an event listener to the article
+burn.addEventListener('click', () => {
+    // Toggle the hidden class on the content div
+    const content = burn.querySelector('.burn__text');
+    content.classList.toggle('burn__hidden');
+});

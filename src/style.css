@@ -530,6 +530,15 @@ body {
   gap: 2rem;
 }
 
+.trouble__heresy:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Light background color change */
+  transform: scale(1.005);
+  /* Slightly scale up */
+  transition: all 0.3s ease;
+  /* Smooth transition */
+}
+
 .trouble__fleeing,
 .trouble__letter {
   border-top-right-radius: 0;
@@ -552,6 +561,10 @@ body {
 .letter__img,
 .burn__img {
   height: 10.93rem;
+}
+
+.heresy__hidden, .fleeing__hidden, .letter__hidden, .burn__hidden{
+  display: none;
 }
 
 .trouble__sub {
@@ -658,7 +671,7 @@ body {
     margin: 0;
   }
 
-  .polyglot__img {
+  /* .polyglot__img {
     max-width: 6.68rem;
     transform: rotate(0);
   }
@@ -672,7 +685,7 @@ body {
 
   .printer-container {
     max-width: 100%;
-  }
+  } */
 }
 
 @media screen and (min-width: 64rem) {
