@@ -39,6 +39,11 @@ body {
   background-size: contain;
 }
 
+.wrapper{
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
 .title {
   font-family: "orpheuspro";
   font-size: 4rem;
