@@ -183,7 +183,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(./assets/img/antwerp.png);
+  background: url(./assets/img/antwerp_t14x7z_c_scale\,w_1060.avif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -227,7 +227,7 @@ body {
 .scheldt__img,
 .port__img,
 .bookwrap__img {
-  max-width: 21.25rem;
+  width: 21.25rem;
   height: auto;
   position: absolute;
 }
@@ -912,6 +912,83 @@ footer {
 /* responsive ------------------------------------------------------------------ */
 
 @media screen and (min-width: 48rem) {
+  .scheldt-pinned,
+    .port-pinned,
+    .bookwrap-pinned {
+      height: 100%;
+  
+      display: grid;
+      grid-template-columns: 50% 50%;
+      justify-items: center;
+      align-items: center;
+    }
+  
+    .scheldt-first,
+    .scheldt-second,
+    .scheldt-third,
+    .port-first,
+    .port-second,
+    .port-third,
+    .bookwrap-first,
+    .bookwrap-second {
+      padding: 2rem;
+    }
+  
+    .scheldt-first,
+    .port-first,
+    .bookwrap-first {
+      border-bottom: 0;
+    }
+  
+    .scheldt-second,
+    .port-second {
+      border-radius: 0;
+      border-top: 0;
+      border-bottom: 0;
+    }
+  
+    .scheldt-third,
+    .port-third,
+    .bookwrap-second {
+      border-radius: 0;
+      border-top: 0;
+    }
+  
+  
+    .pin__sub {
+      display: none;
+    }
+  
+    .scheldt__img,
+    .bookwrap__img {
+      grid-column-start: 2;
+    }
+  
+    .scheldt__text,
+    .bookwrap__text {
+      grid-row-start: 1;
+    }
+  
+    .scheldt__img,
+    .port__img,
+    .bookwrap__img {
+      width: 13.93rem;
+      position: relative;
+      top: auto;
+    }
+  
+    .port__img {
+      grid-column-start: 1;
+    }
+  
+    .age {
+      flex-direction: row;
+    }
+  
+    .age__text {
+      max-width: 44.56rem;
+    }
+
   .officina {
     margin-left: 2.87rem;
     margin-right: 2.87rem;
@@ -1145,6 +1222,7 @@ footer {
   .scheldt__img,
   .port__img,
   .bookwrap__img {
+    width: 13.93rem;
     position: relative;
     top: auto;
   }
