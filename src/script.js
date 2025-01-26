@@ -1,5 +1,3 @@
-
-
 const schedltAnimation = () => {
     const tlScheldt = gsap.timeline({
         scrollTrigger: {
@@ -81,6 +79,27 @@ const bookwrapAnimation = () =>{
     tlBookwrap.fromTo('.bookwrap-second',
         { y: "100%", opacity: 0 },
         { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+    )
+}
+
+const introGsap = () => {
+    const tlIntro = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".intro",
+            start: "top top",
+            end: "2rem", 
+            markers: true
+        }
+    });
+
+    tlIntro.fromTo(".intro__img", 
+        {x: "-15rem", opacity: 0}, 
+        {x: 0, opacity: 1, ease: "power2.out", duration: 1}
+    )
+
+    tlIntro.fromTo(".intro__text",
+        {x: "15rem", opacity: 0},
+        {x: 0, opacity: 1, ease: "power2.out", duration: 1}
     )
 }
 
@@ -295,6 +314,7 @@ const quizInteration = () => {
 const init = () => {
     gsap.registerPlugin(ScrollTrigger);
 
+    introGsap();
     schedltAnimation();
     portAnimation();
     bookwrapAnimation();

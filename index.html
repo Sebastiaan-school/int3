@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  
+
   <div class="header">
     <h1 class="title">Printing for Plantin</h1>
     <img class="header__stamp" src="./src/assets/img/stamp.svg" alt="stamp of approval">
@@ -32,7 +32,6 @@
         ./src/assets/img/header_zlh713_c_scale,w_628.avif 628w,
         ./src/assets/img/header_zlh713_c_scale,w_815.avif 815w,
         ./src/assets/img/header_zlh713_c_scale,w_947.avif 947w,
-        ./src/assets/img/header_zlh713_c_scale,w_1112.avif 1112w,
         ./src/assets/img/header_zlh713_c_scale,w_1118.avif 1118w,
         ./src/assets/img/header_zlh713_c_scale,w_1132.avif 1132w"
         src="./src/assets/img/header_zlh713_c_scale,w_1132.avif" alt="">
@@ -113,7 +112,7 @@
             The port is one of the busiest in Europe
             during our time, connected to the River
             Scheldt and opening up trade routes that
-            stretched as far as I can see and beyond.
+            stretch as far as I can see and beyond.
           </p>
         </article>
         <article class="port-second">
@@ -143,7 +142,7 @@
             it also means easy access to markets.
           </p>
         </article>
-        
+
         <article class="bookwrap-second">
           <h3 class="pin__sub">Business Dream</h3>
           <p>
@@ -470,27 +469,30 @@
     </article>
   </section>
   <section class="quiz">
-    <h2>Before you go</h2>
+    <h2 class="quiz__title">Before you go...</h2>
     <p>
       Actually, now that I think about it, maybe it’s time for you to head back to where you came from. I heard
-      there’s even more to learn about Plantin to learn there! <br><br>
-      Actually before you go, check out if you have what it takes to get approved by Plantin.
+      there’s even more to learn about Plantin to learn there! <br>
+      <br>
+      But wait, before you go, check out if you have what it takes to get approved by Plantin.
     </p>
-    
+
     <!-- Question 1 -->
     <article class="quiz__question active" id="question-1">
-      <h3>How many presses does Plantin have?</h3>
-      <button class="counter__minus">-</button>
-      <p class="counter__value">0</p>
-      <button class="counter__plus">+</button>
+      <h3 class="quiz__sub">How many presses does Plantin have?</h3>
+      <div class="q1__counter">
+        <button class="counter__minus">-</button>
+        <p class="counter__value">0</p>
+        <button class="counter__plus">+</button>
+      </div>
       <button class="quiz__previous" disabled>Previous</button>
       <button class="quiz__next" disabled>Next</button>
     </article>
-    
+
     <!-- Question 2 -->
     <article class="quiz__question" id="question-2">
-      <h3>Type 'goodbye' in the way printers used to</h3>
-      <p>Do this by hitting the letters in the correct sequence: 4552163</p>
+      <h3 class="quiz__sub">Type 'goodbye' in the way printers used to</h3>
+      <p>Do this by hitting the letters in the correct sequence!</p>
       <div class="typesetter__letter">
         <p id="1">b</p>
         <p id="2">d</p>
@@ -503,11 +505,11 @@
       <button class="quiz__previous">Previous</button>
       <button class="quiz__next" disabled>Next</button>
     </article>
-    
+
     <!-- Question 3 -->
     <article class="quiz__question" id="question-3">
-      <h3>Who did Jan Moretus marry?</h3>
-      <div>
+      <h3 class="quiz__sub">Who did Jan Moretus marry?</h3>
+      <div class="q3__options">
         <p class="correct">Martina Plantin</p>
         <p>Margaretha Plantin</p>
         <p>Magdalen Plantin</p>
@@ -515,6 +517,20 @@
       </div>
       <button class="quiz__previous">Previous</button>
       <button class="quiz__next" disabled>Next</button>
+    </article>
+    
+    <article class="quiz__final">
+      <h3>Congratulations you earned the stamp of approval!</h3>
+      <p>
+        Wow, you really did it, Plantin would have welcomed you with open arms. With this you are also ready to dive
+        deeper into
+        Plantin’s history. Have some fun and explore that in this museum I heard of...
+      </p>
+      <button>explore the museum</button>
+      <p>
+        If you want, I have some friends who also have interesting stories, you can check those out here:
+      </p>
+      <button>next story</button>
     </article>
   </section>
 
