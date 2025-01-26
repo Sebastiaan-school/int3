@@ -8,7 +8,6 @@ const schedltAnimation = () => {
             end: '+=100%',
             scrub: true,
             pin: true,
-            markers: true
         }
     });
 
@@ -39,7 +38,6 @@ const portAnimation = () => {
             end: '+=100%',
             scrub: true,
             pin: true,
-            markers: true,
         }
     });
 
@@ -62,17 +60,40 @@ const portAnimation = () => {
     )
 }
 
+const bookwrapAnimation = () =>{
+    const tlBookwrap = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.bookwrap-pinned',
+            start: 'top-=100 top',
+            end: '+=100%',
+            scrub: true,
+            pin: true,
+        }
+    });
+
+    // Add animations to the timeline
+    tlBookwrap.fromTo('.bookwrap-first',
+        { y: "100%", opacity: 0 },
+        { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+    )
+
+    // Animation for second text (fade-in and reset)
+    tlBookwrap.fromTo('.bookwrap-second',
+        { y: "100%", opacity: 0 },
+        { y: "0%", opacity: 1, ease: "power2.out", duration: 1 }
+    )
+}
+
 const printerAnimation = () => {
     // Create a timeline for aligning all .printer elements
     const tlPrinter = gsap.timeline({
         scrollTrigger: {
             trigger: ".printing",
             pin: true,
-            pinSpacing: true,
+            // pinSpacing: true,
             start: "top top",
             end: "+100%",
             scrub: true,
-            markers: true,
         }
     });
 
@@ -276,6 +297,7 @@ const init = () => {
 
     schedltAnimation();
     portAnimation();
+    bookwrapAnimation();
     printerAnimation();
     dragdropInteraction();
     troubleToggle();

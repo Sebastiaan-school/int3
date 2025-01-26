@@ -3,8 +3,9 @@
   --bg-color-opacity: #fff6ecaa;
   --main-color: #B10B3A;
   --sub-color: #8D8984;
-  --main-color-bg: #b10b3a7b;
+  --main-color-bg: #b10b3aa2;
   --dark-bg-color: #141823;
+  --dark-bg-color-opacity: #14182375;
   --dark-title: #F8D3A6;
 
   --mobile-margin: 5.3rem;
@@ -57,7 +58,6 @@ body {
 .printingpress,
 .plantin,
 .moretus,
-.bookwrap,
 .age {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -197,9 +197,9 @@ body {
 }
 
 .scheldt-pinned,
-.port-pinned {
+.port-pinned,
+.bookwrap-pinned {
   height: 75vh;
-  max-width: 100%;
   position: relative;
 
   margin-left: 1.5rem;
@@ -213,16 +213,28 @@ body {
   align-items: center;
 }
 
+.pin__sub {
+  font-family: "orpheuspro";
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--dark-title);
+  margin-bottom: 1rem;
+}
+
 .scheldt__img,
-.port__img {
-  max-width: 21.3rem;
+.port__img,
+.bookwrap__img {
+  max-width: 21.25rem;
+  height: auto;
   position: absolute;
 
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .scheldt__text,
-.port__text {
+.port__text,
+.bookwrap__text {
   /* margin-top: 5rem; */
   /* align-self: start; */
   display: flex;
@@ -235,20 +247,17 @@ body {
 .scheldt-third,
 .port-first,
 .port-second,
-.port-third {
-  width: 21rem;
+.port-third,
+.bookwrap-first,
+.bookwrap-second {
+  margin-top: 0;
+  width: 18rem;
+  padding: 1rem;
   color: var(--bg-color);
   background-color: var(--main-color-bg);
-}
-
-.bookwrap {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-
-.bookwrap__img {
-  height: 8.25rem;
+  border: solid 0.25rem var(--bg-color);
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
 }
 
 .age {
@@ -347,6 +356,11 @@ body {
 .officina__polyglot {
   height: 100%;
   margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .polyglot__title {
@@ -388,6 +402,7 @@ body {
   font-family: "orpheuspro";
   color: var(--main-color);
   font-size: 2rem;
+  font-weight: bold;
 
   position: absolute;
   display: flex;
@@ -416,7 +431,7 @@ body {
   margin-left: 2rem;
   margin-right: 2rem;
 
-  height: 75%;
+  height: 65%;
   border: solid var(--main-color) 0.25rem;
   border-radius: 8.1rem;
   position: relative;
@@ -455,10 +470,10 @@ body {
 }
 
 .drag__container {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem; */
+  gap: 2rem;
 }
 
 .drag__img,
@@ -779,22 +794,6 @@ body {
   .scale {
     margin: 0;
   }
-
-  /* .polyglot__img {
-    max-width: 6.68rem;
-    transform: rotate(0);
-  }
-
-  .polyglot__section {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    border-radius: 5rem;
-    padding: 2rem;
-  }
-
-  .printer-container {
-    max-width: 100%;
-  } */
 }
 
 @media screen and (min-width: 64rem) {
@@ -802,9 +801,9 @@ body {
   .header,
   .intro,
   .officina,
-  .plantin,
+  .printingpress,
+  .plantin, .trouble__periods,
   .moretus,
-  .bookwrap,
   .age {
     margin-left: 6.37rem;
     margin-right: 6.37rem;
@@ -923,7 +922,8 @@ body {
   }
 
   .scheldt-pinned,
-  .port-pinned {
+  .port-pinned,
+  .bookwrap-pinned {
     height: 100%;
 
     display: grid;
@@ -932,36 +932,40 @@ body {
     align-items: center;
   }
 
-  .scheldt__img {
+  .scheldt-first,
+  .scheldt-second,
+  .scheldt-third,
+  .port-first,
+  .port-second,
+  .port-third,
+  .bookwrap-first,
+  .bookwrap-second {
+    padding: 2rem;
+  }
+
+  /* .pin__sub {
+    display: none;
+  } */
+
+  .scheldt__img,
+  .bookwrap__img {
     grid-column-start: 2;
   }
 
-  .scheldt__text {
+  .scheldt__text,
+  .bookwrap__text {
     grid-row-start: 1;
   }
 
   .scheldt__img,
-  .port__img {
+  .port__img,
+  .bookwrap__img {
     position: relative;
     top: auto;
   }
 
   .port__img {
     grid-column-start: 1;
-  }
-
-  .bookwrap {
-    grid-template-columns: 50% 50%;
-    color: var(--bg-color);
-  }
-
-  .bookwrap__text {
-    grid-column-start: 1;
-    grid-row: 1;
-  }
-
-  .bookwrap__img {
-    grid-column-start: 2;
   }
 
   .age {
@@ -1018,15 +1022,18 @@ body {
   }
 
   .printer-container {
-    max-width: 44.37rem;
+    height: 95%;
+    max-width: 22.37rem;
+    border-radius: 10rem;
+  }
+
+  .printer img {
+    height: 22rem;
   }
 
   .plantin {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
     height: 100%;
     display: grid;
-    grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     align-content: center;
     justify-items: center;
