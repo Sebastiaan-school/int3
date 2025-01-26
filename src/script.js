@@ -246,7 +246,7 @@ const quizInteration = () => {
     });
 
     // Question 2 Logic: Sequence-based Question
-    const correctSequence = ['4', '5', '5', '2', '1', '6', '3'];
+    const correctSequence = ['3', '6', '1', '2', '5', '5', '4'];
     const clickedSequence = [];
     const letters = document.querySelectorAll('.typesetter__letter p');
     const nextButton2 = document.querySelector('#question-2 .quiz__next');

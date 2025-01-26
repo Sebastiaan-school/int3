@@ -36,7 +36,6 @@ body {
   line-height: 140%;
   background-image: linear-gradient(var(--bg-color-opacity), var(--bg-color-opacity)),
     url(./assets/img/paper.png);
-  /* background-blend-mode: multiply; */
   background-size: contain;
 }
 
@@ -91,7 +90,9 @@ body {
   height: 18rem;
 }
 
-.header__btn {
+.header__btn,
+.nextstory__btn,
+.final__btn {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.4rem;
@@ -134,7 +135,6 @@ body {
 
   padding: .8rem;
   margin: .5rem;
-  /* padding-bottom: 2rem; */
 
   display: flex;
   flex-direction: column;
@@ -230,15 +230,11 @@ body {
   max-width: 21.25rem;
   height: auto;
   position: absolute;
-
-  /* z-index: -1; */
 }
 
 .scheldt__text,
 .port__text,
 .bookwrap__text {
-  /* margin-top: 5rem; */
-  /* align-self: start; */
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -513,15 +509,14 @@ body {
 
 .drag__options p {
   padding: 0.5rem;
-  border: 2px dashed #aaa;
+  border: 2px dashed var(--main-color);
   border-radius: 5px;
   text-align: center;
-  background-color: #f9f9f9;
   transition: background-color 0.3s ease;
 }
 
 .drag__options p.hovered {
-  background-color: #d4f1d4;
+  background-color: var(--main-color);
 }
 
 /* plantin section ------------------------------------------------------------------ */
@@ -600,11 +595,8 @@ body {
 
 .trouble__heresy:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  /* Light background color change */
   transform: scale(1.005);
-  /* Slightly scale up */
   transition: all 0.3s ease;
-  /* Smooth transition */
 }
 
 .trouble__fleeing,
@@ -704,7 +696,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 }
 
 #question-1,
@@ -757,9 +749,12 @@ body {
 
 .quiz__question {
   margin-top: 2rem;
+  padding: 1rem;
   height: 100%;
   display: none;
   margin-bottom: 2rem;
+  border: solid .25rem var(--main-color);
+  border-radius: 2rem;
 }
 
 .quiz__sub {
@@ -837,17 +832,82 @@ body {
   padding-right: 1rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
-
-  background-color: var(--main-color);
   border: 0;
   font-size: 1rem;
   color: var(--bg-color);
   font-family: "orpheuspro";
 
   font-weight: bold;
-  align-self: center;
-  justify-self: center;
 }
+
+.quiz__next:enabled,
+.quiz__previous {
+  background-color: var(--main-color);
+  color: var(--bg-color);
+}
+
+.quiz__previous:disabled,
+.quiz__next {
+  background-color: var(--bg-color);
+  color: var(--dark-bg-color-opacity);
+}
+
+.quiz__final {
+  margin-top: 2rem;
+  height: 100%;
+}
+
+.final__container {
+  margin-top: 2rem;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.final__stamp {
+  max-width: 11rem;
+}
+
+.final__btn {
+  margin-bottom: 2rem;
+}
+
+.final__title {
+  font-size: 1.25rem;
+  font-family: "orpheuspro";
+  font-weight: bold;
+  color: var(--main-color);
+  justify-self: flex-start;
+}
+
+.final__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer {
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  text-align: center;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  padding: 2rem;
+}
+
+.footer__title {
+  font-family: "orpheuspro";
+  font-size: 1.25rem;
+
+  margin-bottom: 1rem;
+}
+
 
 /* responsive ------------------------------------------------------------------ */
 
@@ -892,6 +952,10 @@ body {
   .scale {
     margin: 0;
   }
+
+  .officina__sideInfo, .scale__sideInfo {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 64rem) {
@@ -903,7 +967,8 @@ body {
   .plantin,
   .trouble__periods,
   .moretus,
-  .age {
+  .age,
+  .quiz__final {
     margin-left: 6.37rem;
     margin-right: 6.37rem;
     margin-bottom: var(--mobile-margin);
@@ -911,7 +976,6 @@ body {
 
   .header {
     margin-top: 2rem;
-    /* max-height: 100vh; */
     display: grid;
     grid-template-rows: repeat(5, 10%);
     grid-template-columns: repeat(10, 10%);
@@ -1100,6 +1164,7 @@ body {
   .officina__title {
     margin-bottom: 2rem;
     font-size: 3rem;
+    font-weight: bold;
     line-height: 100%;
   }
 
@@ -1113,7 +1178,6 @@ body {
 
   .officina__img {
     max-height: 100vh;
-    /* width: auto; */
 
     grid-column: 2;
     grid-row: 1;
@@ -1125,9 +1189,56 @@ body {
     grid-row: 1;
   }
 
+  .officina__sideInfo {
+    position: absolute;
+    top: 80%;
+    left: -5em;
+
+    font-family: "orpheuspro";
+    font-size: 0.87rem;
+    color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 1rem;
+    transform: rotate(-90deg);
+    /* margin-left: -2.5rem; */
+  }
+
+  .officina__sideInfo img {
+    height: 2.68rem;
+  }
+
+  .scale__sideInfo {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+
+    font-size: .75rem;
+    line-height: 100%;
+    color: var(--main-color);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    transform: rotate(90deg);
+  }
+
+  .scale__sideInfo img {
+    height: 1.5rem;
+  }
+
   .officina__right,
   .scale {
     margin: 0;
+  }
+
+  .printingpress__text1, .printingpress__text2, .reveal {
+    justify-self: center;
+    max-width: 44.33rem;
   }
 
   .polyglot__img {
@@ -1198,7 +1309,6 @@ body {
 
   .plantin__border {
     padding-bottom: 1rem;
-    /* margin: 0; */
     min-height: 22rem;
 
     border: 0;
@@ -1291,9 +1401,37 @@ body {
 
   .moretus__border {
     padding: 2rem;
-    /* margin: 0; */
     min-height: 22rem;
 
     border: 0;
+  }
+
+  .quiz__final {
+    margin-top: 2rem;
+    height: 100%;
+  }
+
+  .final__title {
+    font-size: 3rem;
+    line-height: 100%;
+  }
+
+  .final__container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+
+  .final__text {
+    max-width: 48rem;
+  }
+
+  .final__stamp {
+    height: 100%;
+  }
+
+  footer {
+    padding: 4rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
   }
 }
