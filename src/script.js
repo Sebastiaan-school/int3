@@ -87,8 +87,8 @@ const introGsap = () => {
         scrollTrigger: {
             trigger: ".intro",
             start: "top top",
-            end: "2rem", 
-            markers: true
+            end: "+=25%", 
+            scrub: true,
         }
     });
 
@@ -99,7 +99,28 @@ const introGsap = () => {
 
     tlIntro.fromTo(".intro__text",
         {x: "15rem", opacity: 0},
-        {x: 0, opacity: 1, ease: "power2.out", duration: 1}
+        {x: 0, opacity: 1, ease: "power2.out", duration: 2}
+    )
+}
+
+const moretusGsap = () => {
+    const tlMoretus = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".moretus__text",
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+        }
+    });
+
+    tlMoretus.fromTo(".moretus__img",
+        { x: "-15rem", opacity: 0 },
+        { x: 0, opacity: 1, ease: "power2.out", duration: 1 }
+    )
+
+    tlMoretus.fromTo(".moretus__text",
+        { x: "15rem", opacity: 0 },
+        { x: 0, opacity: 1, ease: "power2.out", duration: 2 }
     )
 }
 
@@ -315,6 +336,7 @@ const init = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     introGsap();
+    moretusGsap();
     schedltAnimation();
     portAnimation();
     bookwrapAnimation();

@@ -50,6 +50,11 @@ body {
   margin-bottom: 0rem;
 }
 
+.highlight {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
 /* margins ------------------------------------------------------------------ */
 .header,
 .intro,
